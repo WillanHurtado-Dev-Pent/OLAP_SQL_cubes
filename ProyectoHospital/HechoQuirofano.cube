@@ -1,0 +1,191 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="7adee74c-4113-4ced-97da-2366ad3d9f9f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>HechoQuirofano</ID>
+  <Name>HechoQuirofano</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="ddf6b504-e474-4812-8368-d3a9e4ceb50a">
+      <ID>Dim Quirofano</ID>
+      <Name>Dim Quirofano</Name>
+      <DimensionID>Dim Quirofano</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="c0245d5c-5535-4321-ad29-702360a118c5">
+          <AttributeID>Id Dim Quirofano</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="6693de46-8f8b-4f96-97d7-5ca2087772fd">
+      <ID>Dim Tiempo Quirofano</ID>
+      <Name>Dim Tiempo Quirofano</Name>
+      <DimensionID>Dim Tiempo Quirofano</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="38dc0b1d-64d4-4e76-aabb-8683177a62ab">
+          <AttributeID>Id Dim Tiempo</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="23f15b3b-c51d-45c8-a10e-bf30e9cf910a">
+      <ID>Dim Operacion</ID>
+      <Name>Dim Operacion</Name>
+      <DimensionID>Dim Operacion</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b6379d2e-5c7b-43b4-862c-8cd432a7a178">
+          <AttributeID>ID Dim Operacion</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="0479313f-39b9-4332-b21d-83ed73524dcd">
+      <ID>Dim Tipo De Operacion</ID>
+      <Name>Dim Tipo De Operacion</Name>
+      <DimensionID>Dim Tipo De Operacion</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f5616150-bd25-4c0d-8b9b-94a0da198ebb">
+          <AttributeID>Id Dim Tipo De Operacion</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="a45cce8b-0436-4cec-8bf5-00a63af5a3ee">
+      <ID>Hechos Quirofano</ID>
+      <Name>Hechos Quirofano</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="a21694ff-c9d3-4027-bcd1-1c79acf5a989">
+          <ID>Recuento Hechos Quirofano</ID>
+          <Name>Recuento Hechos Quirofano</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="9ec8eadf-0b4a-418a-b329-b07e3fc2f1cf">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="b91c4c57-2501-4986-ab63-3979dbe4e882">
+              <TableID>dbo_HechosQuirofano</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d2641803-2ce9-4ee5-8f2f-bc329fa90714">
+          <CubeDimensionID>Dim Quirofano</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5af996d7-37c0-43c1-ae5a-6e775385227a">
+              <AttributeID>Id Dim Quirofano</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="8909cb71-b927-41ae-8c1a-a31208efc214">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="3cd6ded8-6147-4fcf-94f5-f6cb7f519bfa">
+                    <TableID>dbo_HechosQuirofano</TableID>
+                    <ColumnID>idQuirofano</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6eac5e0f-1347-4ceb-aab4-b6003ebff66a">
+          <CubeDimensionID>Dim Tiempo Quirofano</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4aababdc-d6b6-40fc-8cb7-132062919bef">
+              <AttributeID>Id Dim Tiempo</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="4c2c801e-bc84-40b2-99b6-8ea678e0b1aa">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c6d9381b-72da-4d54-b836-8cf5a9db7f85">
+                    <TableID>dbo_HechosQuirofano</TableID>
+                    <ColumnID>idTiempo</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="17ed3e9e-8f9f-4cf1-a734-217066ae6546">
+          <CubeDimensionID>Dim Operacion</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e3c9cfa1-b124-498c-a116-6ff5f228365f">
+              <AttributeID>ID Dim Operacion</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6d393336-cd37-434b-b827-c45572902ba8">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="02ab812b-474e-437c-a98a-3e04180d351c">
+                    <TableID>dbo_HechosQuirofano</TableID>
+                    <ColumnID>idOperacion</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7cc974ca-a2b0-448a-af95-9dfcc8a1ea34">
+          <CubeDimensionID>Dim Tipo De Operacion</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="316acc1e-ccf6-46be-a339-2a1147b68e67">
+              <AttributeID>Id Dim Tipo De Operacion</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="cb651cd0-46c4-4320-a3b8-0a8c8c031bd9">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4e171c86-3ead-40b5-85dc-0d216abee0c3">
+                    <TableID>dbo_HechosQuirofano</TableID>
+                    <ColumnID>IdTipoDeOperacion</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="c0087248-3c02-4b90-9ec5-f7f65b1abddd">
+    <DataSourceViewID>Hospitale</DataSourceViewID>
+  </Source>
+</Cube>

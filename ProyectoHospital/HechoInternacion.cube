@@ -1,0 +1,157 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4d1d9324-cd99-481a-a157-70fd1e76112c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>HechoInternacion</ID>
+  <Name>HechoInternacion</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="b54adcc9-1ccc-4fd0-9684-81ce08288531">
+      <ID>Dim Habitacion</ID>
+      <Name>Dim Habitacion</Name>
+      <DimensionID>Dim Habitacion</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="cc55ee7e-d70b-4805-ac9a-94a29bd826b3">
+          <AttributeID>Id Dim Habitacion</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="6f581aa2-9aa5-4973-a12f-ac11fbf2a491">
+      <ID>Dim Area</ID>
+      <Name>Dim Area</Name>
+      <DimensionID>Dim Area</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="6b1607ad-efba-405d-aca9-5f7a0f7f64e2">
+          <AttributeID>Id Dim Area</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="17f077be-eb03-4ce2-b11b-5ed489c56089">
+      <ID>Hechos Internacion</ID>
+      <Name>Hechos Internacion</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="3decd3d4-6b83-4f8d-beca-7d02a927d5d3">
+          <ID>Id Hechos Internacion</ID>
+          <Name>Id Hechos Internacion</Name>
+          <Source dwd:design-time-name="54833694-9085-4f68-bca2-9d3c5dea6901">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="427296ef-968f-493d-86af-cea4ab3ea760">
+              <TableID>dbo_HechosInternacion</TableID>
+              <ColumnID>idHechosInternacion</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="bf04025f-3c16-47b6-9d62-754b62fa21a8">
+          <ID>Cantidad Pacientes</ID>
+          <Name>Cantidad Pacientes</Name>
+          <Source dwd:design-time-name="5e95b1a0-7a47-49fc-a3e9-1c210b2f3a10">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e6cd2fce-f1fb-4160-80fd-31a4b3397559">
+              <TableID>dbo_HechosInternacion</TableID>
+              <ColumnID>cantidadPacientes</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="940b3de0-3310-463b-9ba2-a7f0e9615e98">
+          <ID>Recuento Hechos Internacion</ID>
+          <Name>Recuento Hechos Internacion</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="447572e3-2bdd-4881-941a-72a4d42b0576">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="aa86169d-ba00-497b-beb1-55464a2d0a17">
+              <TableID>dbo_HechosInternacion</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="34bee8f6-e188-43d9-b217-2bb49748c991">
+          <CubeDimensionID>Dim Area</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="2c4a3efc-52ac-4c66-91a8-1a78f30f5828">
+              <AttributeID>Id Dim Area</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b85fe0ca-1e3e-470d-908d-7910149f217b">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0475dca3-c3f9-4be7-b8b2-50c6140238a5">
+                    <TableID>dbo_HechosInternacion</TableID>
+                    <ColumnID>idDimArea</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="4c25a5c2-0814-443c-bc52-fcf09a392ffb">
+          <CubeDimensionID>Dim Habitacion</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4b3f7117-f790-4c32-b02b-2d0d23b94672">
+              <AttributeID>Id Dim Habitacion</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="2d73ba76-fa1f-4c3a-935b-50b7703f0875">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="552a246f-4e39-4856-9faa-abe37abf8cfd">
+                    <TableID>dbo_HechosInternacion</TableID>
+                    <ColumnID>idDimHabitacion</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="95ce4bfe-6fd4-488e-b82c-03dc9e6eabaf">
+    <DataSourceViewID>Hospitale</DataSourceViewID>
+  </Source>
+</Cube>

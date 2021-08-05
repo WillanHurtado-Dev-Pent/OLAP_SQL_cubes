@@ -1,0 +1,138 @@
+
+/* primer cubo*/
+
+create view DimOperacion
+as
+select ID_Operacion as IDDimOperacion, Num_Expediente, ID_Empleado as empleado, ID_TOperacion AS tipoOperacion from Operacion_Paciente
+
+create view DimTipoDeOperacion
+as
+select ID_TOperacion AS IdDimTipoDeOperacion, NombreOperacion as nombre, PrecioOperacion as precio from TipoOperacion
+
+create view DimQuirofano
+as
+select ID_Quirofano as IdDimQuirofano, NombreQuirofano as nombre from Quirofano
+
+create view DimTiempoQuirofano
+as
+select ID_Operacion as IdDimTiempo, FechaOperacion as fecha from Operacion_Paciente
+
+create view HechosQuirofano
+as 
+select q.ID_Quirofano as idHechosQuirofano, q.ID_Quirofano as numeroQuirofanos, o.HoraFinOperacion as horaFin, o.HoraOperacion as horaInicio, o.ID_TOperacion as IdTipoDeOperacion, o.ID_Quirofano as idQuirofano
+, o.ID_Operacion as idTiempo, o.ID_Operacion as idOperacion
+from Quirofano as q, Operacion_Paciente as o
+where q.ID_Quirofano= o.ID_Quirofano
+
+/*segundo cubo*/
+
+create view DimArea
+as
+select ID_Area as Id_DimArea, NombreArea as nombre from Area
+
+create view DimHabitacion
+as 
+select ID_Habitacion as idDimHabitacion, TipoHabitacion as tipo  from Habitacion
+
+create view HechosInternacion
+as
+select i.ID_DetalleHabitacion as idHechosInternacion, h.ID_Area as idDimArea, d.ID_Habitacion as idDimHabitacion, i.Num_Paciente as cantidadPacientes, i.FechaIngreso, i.FechaAlta
+from Historial_Internos as i, DetalleHabitacion as d, Habitacion as h
+where i.ID_DetalleHabitacion=d.ID_DetalleHabitacion and h.ID_Habitacion=d.ID_Habitacion
+
+
+
+/*  tercer cubo*/
+
+
+create view DimPacienteYSeguro 
+as 
+select  e.Num_Expediente as IdDimPacienteYSeguro , e.ID_Persona as persona, s.ID_Seguro as seguro, s.DescuentoSeguro as descuento, s.PrecioSeguro as precio
+from  Expediente_Paciente as e, Seguro as s
+where e.ID_Seguro= s.ID_Seguro
+
+create view DimTiempoConsulta
+as
+select o.ID_Operacion as IdDimTiempoConsulta, O.HoraOperacion  from Operacion_Paciente as o
+
+create view HechosConsulta
+as
+select c.ID_Consulta as idHechosConsulta o.ID_Operacion as idOperacion, o.ID_Operacion as idTiempo, c.Num_Expediente as idPacienteySeguro, o.ID_Operacion as operaciones, o.FechaOperacion as fechaOperacion, c.FechaConsulta fechaConsulta, t.PrecioConsulta as precio, ex.ID_Seguro
+from Consulta as c, TipoConsulta as t, Operacion_Paciente as o, Empleado_Header as e, Expediente_Paciente as ex
+where c.ID_TipoConsulta= t.ID_TipoConsulta and c.ID_Empleado= e.ID_Empleado and o.ID_Empleado= e.ID_Empleado and c.Num_Expediente= ex.Num_Expediente
+
+
+
+/* cuarto cubo*/
+
+create view DimConsulta
+as
+select c.ID_Consulta as IdDimConsulta, c.ID_Empleado as empleado, c.ID_Consulta as consulta, ID_Area as area, ID_TipoConsulta as tipoConsulta, c. FechaConsulta as fechaConsulta
+from Consulta as c
+
+create view DimCita
+as
+select c.ID_Cita as IdDimCita, c.ID_Area as area, c.ID_Empleado as empleado, c.FechaCita fechaCita
+from Cita as c
+
+create view DimEmpleado
+as
+select e.ID_Empleado as idDimEmpleado, e.FechaContratacion
+from Empleado_Header as e
+
+create view DimTiempoEmpleado
+as 
+select ID_Empleado as idDimFecha ,FechaContratacion as fecha from Empleado_Header
+
+create view HechosEmpleado
+as
+select e.ID_Empleado as IdHechosEmpleado, e.FechaContratacion as idDimFecha, c.ID_Cita as idDimCita, o.ID_Operacion as idDimOperacion, c.ID_Consulta as idDimConsulta, c.HoraConsulta as horaConsulta, c.HoraFinConsulta as horaFinConsulta, o.HoraOperacion, o.HoraFinOperacion, e.FechaContratacion, e.FechaDespido, e.ID_Empleado as empleados
+from Empleado_Header as e, Consulta as c, Operacion_Paciente as o, Cita as ci
+where e.ID_Empleado=c.ID_Empleado and e.ID_Empleado= o.ID_Empleado and c.ID_Empleado= e.ID_Empleado
+
+
+
+/* quito cumbo*/
+
+create view DimTiempoPaciente
+as 
+select ID_Consulta as idDimTiempoPaciente, FechaConsulta as fecha  from Consulta
+
+create view DimDiagnostico
+as
+select ID_Diagnostico as idDimDiagnostico, ID_Consulta as consulta, FechaDiagnostico as fechaDiagnostico from Diagnostico
+
+create view DimEnfermedad
+as 
+select ID_Enfermedad as idDimEnfermedad, NombreEnfermedad as nombre from Enfermedad
+
+create view HechosPaciente
+as
+select d.ID_Diagnostico as idHechosPaciente, d.ID_Consulta as idDimTiempo, d.ID_Consulta as idDimConsulta, e.ID_Enfermedad as idDimEnfermedad, d.FechaDiagnostico as idDimDiagnostico, d.ID_Diagnostico as numeroDiagnosticos, ed.ID_Enfermedad as cantidadDiagnosticos, h.Num_Expediente as cantidadEnfermedades
+from Diagnostico as d, Enfermedad_Diagnosticada as ed, Enfermedad as e, Historial_Enfermedad as h
+where d.ID_Diagnostico= ed.ID_Diagnostico and ed.ID_Enfermedad=e.ID_Enfermedad and h.ID_Enfermedad= e.ID_Enfermedad
+
+ 
+/*6to cubo*/
+
+
+create view DimEdadPaciente
+as select p.ID_Persona as idDimEdadPaciente, getdate() as fechaActual , p.FechaNacimiento as nacimiento,  g.NombreGenero as nombreGenero, p.PrimerNombre as nombre, p.PrimerApellido as apellido  from persona as p, genero as g where g.ID_Genero=p.Genero
+
+
+create view DimTiempoEnfermedad
+as
+select c.ID_Consulta as idDimTiempoEnfermedad, FechaConsulta as fecha from consulta as c
+
+create view HechosEnfermedad
+as
+select e.ID_Enfermedad as idHechosEnfermedad, ex.ID_Persona as idDimEdadPaciente, d.ID_Consulta as idDimConsulta, d.ID_Consulta as idDinTiempo, ed.ID_Enfermedad as cantidadEnfermedadesDiagnosticadas, h.ID_Enfermedad as cantidadPacientes
+from Enfermedad_Diagnosticada as ed, Historial_Enfermedad as h, Enfermedad as e, Diagnostico as d, Expediente_Paciente as ex
+where ed.ID_Enfermedad=e.ID_Enfermedad and e.ID_Enfermedad= h.ID_Enfermedad and d.ID_Diagnostico=ed.ID_Diagnostico and ex.Num_Expediente= h.Num_Expediente
+
+
+
+
+
+
+

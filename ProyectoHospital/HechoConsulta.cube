@@ -1,0 +1,179 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="efc6864e-5dba-4cb8-8e5e-fc2482939c69" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>HechoConsulta</ID>
+  <Name>HechoConsulta</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="0525473a-4474-4a58-b2d4-5bce755acbdb">
+      <ID>Dim Operacion</ID>
+      <Name>Dim Operacion</Name>
+      <DimensionID>Dim Operacion</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="dcd07b32-04cd-4df4-a0f8-1f5ab1df2de9">
+          <AttributeID>ID Dim Operacion</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="1b584e86-88c4-480b-ae07-f21008607112">
+      <ID>Dim Tiempo Consulta</ID>
+      <Name>Dim Tiempo Consulta</Name>
+      <DimensionID>Dim Tiempo Consulta</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="cec5b501-a625-4fce-86b0-d135ee4ae33f">
+          <AttributeID>Id Dim Tiempo Consulta</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="f4c67976-cefe-4621-b06c-eecb22e7a9ed">
+      <ID>Hechos Consulta</ID>
+      <Name>Hechos Consulta</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="a7369477-11a4-4b2b-9452-5ccec9ddb1c0">
+          <ID>Id Hechos Consulta</ID>
+          <Name>Id Hechos Consulta</Name>
+          <Source dwd:design-time-name="bf7aab7f-1ef7-410e-bc93-3b8cef319494">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="afa7fbd3-681a-4b2e-a2f2-351a6fe65bb0">
+              <TableID>dbo_HechosConsulta</TableID>
+              <ColumnID>idHechosConsulta</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="354995c9-c770-4423-bea5-76274087bbee">
+          <ID>Operaciones</ID>
+          <Name>Operaciones</Name>
+          <Source dwd:design-time-name="d7091216-50fa-4e5c-8dc2-a2938357ac02">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="43c61820-fbe0-4b3b-9ea4-267da7416e74">
+              <TableID>dbo_HechosConsulta</TableID>
+              <ColumnID>operaciones</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9eb16ba2-b3a9-429e-a1d3-3dbbaeb24e62">
+          <ID>Precio</ID>
+          <Name>Precio</Name>
+          <Source dwd:design-time-name="b13358a9-2692-478c-b97d-5f6f7e3dad6a">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="fc96b432-0c2a-4254-a756-7cd5a8acb8c1">
+              <TableID>dbo_HechosConsulta</TableID>
+              <ColumnID>precio</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2c6ce2d1-74de-4ddf-9d2a-1e36591149dd">
+          <ID>ID Seguro</ID>
+          <Name>ID Seguro</Name>
+          <Source dwd:design-time-name="ced13476-9ad3-4910-85f2-4130d944594a">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8a90d891-ad16-4798-a8e8-ecd7996fdfed">
+              <TableID>dbo_HechosConsulta</TableID>
+              <ColumnID>ID_Seguro</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="3e5592f3-dd47-4ebb-9039-07ffdc0cc6e3">
+          <ID>Recuento Hechos Consulta</ID>
+          <Name>Recuento Hechos Consulta</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="9b4a45b9-c34f-4a43-8973-309855d5e5d2">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="08543149-6de3-4f10-bc96-068e1d17053d">
+              <TableID>dbo_HechosConsulta</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="da4dce72-f2cd-41e8-90e6-360d010587ae">
+          <CubeDimensionID>Dim Operacion</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c0fd254e-842e-4f4d-b4ce-c050ad21b99f">
+              <AttributeID>ID Dim Operacion</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="47343288-c009-4b9a-890f-c3e075b71266">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="cd5e920d-b883-4b3a-a9f3-23fc42bae0a3">
+                    <TableID>dbo_HechosConsulta</TableID>
+                    <ColumnID>idOperacion</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="402fdde9-4376-4268-a286-67f0c64722f0">
+          <CubeDimensionID>Dim Tiempo Consulta</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a80dbdca-39dc-48bb-9017-5538f5d5ba41">
+              <AttributeID>Id Dim Tiempo Consulta</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="711678fe-22a3-4ec8-9f10-1e60b03ecd39">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="82b1c72b-c021-4468-ae4e-1cef9da0f444">
+                    <TableID>dbo_HechosConsulta</TableID>
+                    <ColumnID>idTiempo</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="f1cc1739-c6f5-4303-9d52-3bf8dfee7318">
+    <DataSourceViewID>Hospitale</DataSourceViewID>
+  </Source>
+</Cube>
